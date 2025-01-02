@@ -1,19 +1,18 @@
 /* General Styling */
 .profile-page {
-    background-color: #000000; /* Dark background to match the theme */
-    color: #fff; /* White text color */
-    padding: 20px; /* Padding for content */
-    max-width: 1200px; /* Max width for the profile page */
-    margin: auto; /* Center the page */
-    border-radius: 10px; /* Rounded corners */
+    background-color: #000000; 
+    color: #fff; 
+    padding: 20px; 
+    max-width: 1200px; 
+    margin: auto; 
+    border-radius: 10px; 
   }
   
-  /* Profile Header */
   .profile-header {
     display: flex;
     align-items: center;
     gap: 20px;
-    border-bottom: 2px solid #4caf50; /* Green accent color */
+    border-bottom: 2px solid #4caf50; 
     padding-bottom: 20px;
     margin-bottom: 20px;
   }
@@ -21,9 +20,9 @@
   .profile-picture {
     width: 120px;
     height: 120px;
-    border-radius: 50%; /* Circle shape */
-    object-fit: cover; /* Ensure the image covers the circle */
-    border: 2px solid #4caf50; /* Green border */
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 2px solid #4caf50; 
   }
   
   .profile-name {
@@ -32,7 +31,6 @@
     margin: 0;
   }
   
-  /* Profile Information */
   .profile-info {
     display: flex;
     flex-direction: column;
@@ -54,7 +52,7 @@
   }
   
   .edit-button {
-    background-color: #4caf50; /* Green background */
+    background-color: #4caf50; 
     color: white;
     border: none;
     padding: 10px 20px;
@@ -68,10 +66,9 @@
   }
   
   .edit-button:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #45a049; 
   }
   
-  /* Responsive Styling */
   @media (max-width: 768px) {
     .profile-header {
       flex-direction: column;

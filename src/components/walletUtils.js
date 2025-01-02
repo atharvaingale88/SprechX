@@ -5,22 +5,18 @@ export const connectWallet = async () => {
     if (window.ethereum) {
       const provider = window.ethereum;
 
-      // Request account access if needed
       await provider.request({ method: 'eth_requestAccounts' });
 
-      // Initialize Web3 instance
       const web3 = new Web3(provider);
 
-      // Get the user's account
       const accounts = await web3.eth.getAccounts();
-      const account = accounts[0];  // Assuming the user connected one account
+      const account = accounts[0]; 
 
-      // Optional: Check if the user is on the correct network
       const networkId = await web3.eth.net.getId();
-      console.log('Network ID:', networkId);  // Can enforce specific chain ID here
+      console.log('Network ID:', networkId); 
 
       console.log('Connected wallet:', account);
-      return { web3, account };  // Return both the Web3 instance and account for future use
+      return { web3, account }; 
     } else {
       console.error('No Ethereum provider found. Please install MetaMask!');
       return null;
