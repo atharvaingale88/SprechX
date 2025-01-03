@@ -36,7 +36,7 @@ const TrendingProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
 
   useEffect(() => {
     refreshTopics();
-  }, []);
+  }, [refreshTopics]);  // Add refreshTopics to the dependency array
 
   return (
     <TrendingContext.Provider value={{ topics, setTopics, refreshTopics, addTopic, removeTopic }}>

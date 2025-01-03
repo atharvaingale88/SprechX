@@ -200,7 +200,7 @@ const CentralFeed: React.FC = () => {
               </div>
             ))}
           </section>
-          <RightSidebar />
+          <RightSidebar>{null}</RightSidebar>
         </div>
       </main>
     </div>
