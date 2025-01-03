@@ -2,6 +2,7 @@ import React, { Suspense, Component, ReactNode } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import TrendingProvider from './components/RightSidebar'; // Import TrendingProvider
 
 // Lazy loading components
 const CentralFeed = React.lazy(() => import('./components/CentralFeed'));
@@ -37,14 +38,16 @@ const App: React.FC = () => {
     <Router>
       <Header />
       <ErrorBoundary>
-        <Suspense fallback={<div>Loading...</div>}>
-          <Routes>
-            <Route path="/" element={<CentralFeed />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="*" element={<Navigate to="/" replace />} /> {/* Redirect unmatched paths */}
-          </Routes>
-        </Suspense>
+        <TrendingProvider> {/* Wrap with TrendingProvider */}
+          <Suspense fallback={<div>Loading...</div>}>
+            <Routes>
+              <Route path="/" element={<CentralFeed />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="*" element={<Navigate to="/" replace />} /> {/* Redirect unmatched paths */}
+            </Routes>
+          </Suspense>
+        </TrendingProvider> {/* End of TrendingProvider */}
       </ErrorBoundary>
       <Footer />
     </Router>

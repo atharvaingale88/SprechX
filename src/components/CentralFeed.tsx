@@ -1,14 +1,9 @@
 import React, { useState } from 'react';
-import {
-  FaSmile,
-  FaHeart,
-  FaComment,
-  FaShare,
-  FaThumbsDown,
-} from 'react-icons/fa';
+import { FaSmile, FaHeart, FaComment, FaShare, FaThumbsDown } from 'react-icons/fa';
 import './CentralFeed.css';
+import './RightSidebar.css';
 import LeftSidebar from '../components/LeftSidebar';
-import { RightSidebar } from '../components/RightSidebar';
+import RightSidebar from '../components/RightSidebar';
 
 interface Comment {
   id: number;
