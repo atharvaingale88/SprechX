@@ -31,8 +31,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "stop": "killall node"
-    
-    
   },
   "eslintConfig": {
     "extends": [

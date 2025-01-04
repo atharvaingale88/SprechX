@@ -8,6 +8,10 @@ import TrendingProvider from './components/RightSidebar'; // Import TrendingProv
 const CentralFeed = React.lazy(() => import('./components/CentralFeed'));
 const Dashboard = React.lazy(() => import('./pages/Dashboard'));
 const AboutPage = React.lazy(() => import('./pages/AboutPage'));
+const Notification = React.lazy(() => import('./pages/Notification'));
+const Discover = React.lazy(() => import('./pages/Discover'));
+const Messages = React.lazy(() => import('./pages/Messages'));
+const ProfilePage = React.lazy(() => import('./pages/ProfilePage'));
 
 // Error boundary component for handling lazy load errors
 class ErrorBoundary extends Component<{ children: ReactNode }, { hasError: boolean }> {
@@ -44,6 +48,10 @@ const App: React.FC = () => {
               <Route path="/" element={<CentralFeed />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/about" element={<AboutPage />} />
+              <Route path="/notifications" element={<Notification />} />
+              <Route path="/discover" element={<Discover />} />
+              <Route path="/message" element={<Messages />} />
+              <Route path="/profile" element={<ProfilePage />} />
               <Route path="*" element={<Navigate to="/" replace />} /> {/* Redirect unmatched paths */}
             </Routes>
           </Suspense>

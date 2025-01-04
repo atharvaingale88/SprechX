@@ -6,8 +6,8 @@ const ProfilePage: React.FC = () => {
   // Mock data - replace with actual user data
   const user = {
     walletAddress: '0x1234...abcd',
-    profilePicture: '/assets/profile-placeholder.png',
-    bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    profilePicture: '/assets/sample-profilepicture.png',
+    bio: 'hello, welcome to my profile.',
   };
 
   return (

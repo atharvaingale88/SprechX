@@ -12,7 +12,7 @@ body {
   color: #e0e0e0;
   background-color: #121212;
   padding: 20px;
-  animation: fadeIn 0.5s ease-in-out;
+  animation: fadeIn 3s ease-in-out;
 }
 
 .about-header {
@@ -27,12 +27,12 @@ body {
 .about-header h1 {
   font-size: 3rem;
   margin: 0;
-  animation: fadeInUp 0.5s ease-in-out;
+  animation: fadeInUp 1.5s ease-in-out;
 }
 
 .about-header p {
   font-size: 1.2rem;
-  animation: fadeInUp 0.7s ease-in-out;
+  animation: fadeInUp 1.5s ease-in-out;
 }
 
 .about-content {
@@ -46,31 +46,31 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin-bottom: 20px;
-  animation: slideInLeft 0.5s ease-in-out;
+  animation: slideInLeft 2s ease-out;
 }
 
 .about-section h2 {
   font-size: 2rem;
   margin-bottom: 10px;
-  animation: fadeInUp 0.5s ease-in-out;
+  animation: fadeInUp 2s ease-out;
 }
 
 .about-section p {
   font-size: 1.1rem;
   line-height: 1.5;
-  animation: fadeInUp 0.7s ease-in-out;
+  animation: fadeInUp 2s ease-out;
 }
 
 .about-section ul {
   list-style-type: none;
   padding: 0;
-  animation: fadeInUp 0.7s ease-in-out;
+  animation: fadeInUp 2s ease-out;
 }
 
 .about-section li {
   margin: 10px 0;
   padding-left: 20px; /* Indent list items */
-  animation: slideInRight 0.5s ease-in-out;
+  animation: slideInRight 2s ease-out;
 }
 
 .about-footer {
@@ -79,7 +79,7 @@ body {
   background-color: #282c34;
   color: white;
   margin-top: 20px;
-  animation: fadeInUp 0.5s ease-in-out;
+  animation: fadeInUp 2s ease-in-out;
 }
 
 @keyframes fadeIn {

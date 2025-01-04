@@ -1,11 +1,12 @@
 /* General Styling */
 .profile-page {
-    background-color: #000000; 
+    background-color: #272626; 
     color: #fff; 
     padding: 20px; 
     max-width: 1200px; 
     margin: auto; 
-    border-radius: 10px; 
+    border-radius: 10px;
+    animation: fadeIn 3s ease-in-out;
   }
   
   .profile-header {
