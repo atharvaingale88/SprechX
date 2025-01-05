@@ -13,7 +13,6 @@ const LeftSidebar: React.FC = () => {
           <li><Link to="/discover" className="nav-button" ><FaCompass /> Discover</Link></li>
           <li><Link to="/message" className="nav-button" ><FaEnvelope /> Messages</Link></li>
           <li><Link to="/profile" className="nav-button"><FaUser /> Profile</Link></li>
-          <li><Link to="/more" className="nav-button"><FaEllipsisH /> More</Link></li>
         </ul>
       </nav>
     </aside>
