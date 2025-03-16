@@ -7,6 +7,7 @@ const ProfilePage: React.FC = () => {
   const user = {
     walletAddress: '0x1234...abcd',
     profilePicture: '/assets/sample-profilepicture.png',
+    //email: 'user@example.com',
     bio: 'hello, welcome to my profile.',
   };
 
@@ -21,6 +22,10 @@ const ProfilePage: React.FC = () => {
           <span className="detail-label">Wallet Address:</span>
           <span className="detail-value">{user.walletAddress}</span>
         </div>
+        {/*<div className="profile-detail">
+          <span className="detail-label">email:</span>
+          <span className="detail-value">{user.email}</span>
+        </div>*/}
         <div className="profile-detail">
           <span className="detail-label">Bio:</span>
           <p className="detail-value">{user.bio}</p>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaSmile, FaHeart, FaComment, FaShare, FaThumbsDown } from 'react-icons/fa';
 import './CentralFeed.css';
 import './RightSidebar.css';
@@ -11,11 +11,16 @@ interface Comment {
   author: string;
 }
 
+interface BlockchainData {
+  txnHash: string;
+  explorerLink: string;
+}
+
 interface Post {
   id: number;
   content: string;
   author: {
-    walletAddress: string;
+    walletAddress: string | undefined;
     profilePicture: string;
   };
   likes: number;
@@ -24,11 +29,24 @@ interface Post {
   dislikedBy: string[];
   comments: number;
   commentList: Comment[];
+  blockchainData?: BlockchainData;
+}
+
+interface BlockchainPost {
+  PostHashHex: string;
+  Body: string;
+  TimestampNanos: number;
+  ProfileEntryResponse: {
+    PublicKeyBase58Check: string;
+    Username: string;
+    ProfilePic: string;
+  };
 }
 
 const CentralFeed: React.FC = () => {
   const [postContent, setPostContent] = useState('');
   const [posts, setPosts] = useState<Post[]>([]);
+  const [blockchainPosts, setBlockchainPosts] = useState<any[]>([]);
   const [commentInputState, setCommentInputState] = useState<Record<number, string>>({});
   const [commentBoxVisible, setCommentBoxVisible] = useState<Record<number, boolean>>({});
   const userWalletAddress = '0x1234567890abcdef';
@@ -37,25 +55,61 @@ const CentralFeed: React.FC = () => {
     setPostContent(e.target.value);
   };
 
-  const handlePostSubmit = () => {
+  const handlePostSubmit = async () => {
     if (!postContent.trim()) return;
-    const newPost: Post = {
-      id: Date.now(),
-      content: postContent,
-      author: {
-        walletAddress: userWalletAddress,
-        profilePicture: 'https://via.placeholder.com/40',
-      },
-      likes: 0,
-      dislikes: 0,
-      likedBy: [],
-      dislikedBy: [],
-      comments: 0,
-      commentList: [],
-    };
-    setPosts([newPost, ...posts]);
-    setPostContent('');
+    try {
+      const response = await fetch('http://localhost:5000/api/posts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ content: postContent })
+      });
+      
+      const result = await response.json();
+      
+      if (result.txn_hash) {
+        // Add to local state and blockchain posts
+        const newPost: Post = {
+          id: Date.now(),
+          content: postContent,
+          author: {
+            walletAddress: userWalletAddress,
+            profilePicture: 'https://via.placeholder.com/40',
+          },
+          likes: 0,
+          dislikes: 0,
+          likedBy: [],
+          dislikedBy: [],
+          comments: 0,
+          commentList: [],
+          blockchainData: {
+            txnHash: result.txn_hash,
+            explorerLink: result.explorer_link
+          },
+        };
+        
+        setPosts([newPost, ...posts]);
+        setPostContent('');
+        alert(`Post added to blockchain!\nVerify: ${result.explorer_link}`);
+      }
+    } catch (error) {
+      console.error('Blockchain post failed:', error);
+      alert('Failed to post to blockchain');
+    }
   };
+
+  useEffect(() => {
+    const fetchBlockchainPosts = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/api/posts');
+        const data = await response.json();
+        setBlockchainPosts(data);
+      } catch (error) {
+        console.error('Error fetching blockchain posts:', error);
+      }
+    };
+    
+    fetchBlockchainPosts();
+  }, []);
 
   const handleInteraction = (postId: number, type: 'like' | 'dislike') => {
     setPosts(
@@ -195,6 +249,16 @@ const CentralFeed: React.FC = () => {
                         <p className="comment-content">{comment.content}</p>
                       </div>
                     ))}
+                  </div>
+                )}
+                {post.blockchainData && (
+                  <div className="blockchain-verification">
+                    <a href={post.blockchainData.explorerLink} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="blockchain-link">
+                      🔗 View on Blockchain Explorer
+                    </a>
                   </div>
                 )}
               </div>
