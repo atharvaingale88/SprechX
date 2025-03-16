@@ -1,23 +1,39 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# ==== Python (Backend) ====
+**/__pycache__/
+*.pyc
+*.pyo
+*.log
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
+# Ignore backend secrets
+Backend_1/secure/
+Backend_1/*.env
+Backend_1/__pycache__/
 
-# testing
-/coverage
+# Ignore Python virtual environment
+deso-env/
+venv/
+env/
 
-# production
-/build
+# ==== Node.js (Frontend) ====
+Frontend_1/node_modules/
+Frontend_1/.env
+Frontend_1/.next/
+Frontend_1/dist/
+Frontend_1/build/
+Frontend_1/coverage/
 
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# ==== System Files ====
+.DS_Store
+Thumbs.db
+
+# Editor Configs
+.vscode/
+.idea/
+
+# General env files
+.env
