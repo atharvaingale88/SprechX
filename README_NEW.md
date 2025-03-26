@@ -4,7 +4,7 @@
 
 ### To Create Python Environment and Install Dependencies run following commands in project directory:
 
-`python -m venv venv`  # Create a virtual environment
+### `python -m venv venv`  # Create a virtual environment
 `source venv/bin/activate`   Activate the environment (Linux/macOS)
 `venv\Scripts\activate`  # Activate the environment (Windows)
 `pip install -r requirements.txt`  # Install dependencies
