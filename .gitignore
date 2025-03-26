@@ -4,23 +4,25 @@
 *.pyo
 *.log
 
-# Ignore backend secrets
-Backend_1/secure/
-Backend_1/*.env
-Backend_1/__pycache__/
+# Ignore backend secrets and environments
+Backend/secure/
+Backend/*.env
+Backend/__pycache__/
+Backend/secure/key_seed.db
+Backend/venv/
 
 # Ignore Python virtual environment
-deso-env/
+deso_venv/
 venv/
 env/
 
 # ==== Node.js (Frontend) ====
-Frontend_1/node_modules/
-Frontend_1/.env
-Frontend_1/.next/
-Frontend_1/dist/
-Frontend_1/build/
-Frontend_1/coverage/
+Frontend/node_modules/
+Frontend/.env
+Frontend/.next/
+Frontend/dist/
+Frontend/build/
+Frontend/coverage/
 
 # Logs
 npm-debug.log*

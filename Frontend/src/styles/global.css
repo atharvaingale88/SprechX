@@ -1,0 +1,11 @@
+/* Global CSS */
+.container {
+  max-width: 100%;
+  overflow-x: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.main-content {
+  margin-top: 60px; /* Adjust based on header height */
+}
