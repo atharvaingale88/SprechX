@@ -5,9 +5,9 @@
 ### To Create Python Environment and Install Dependencies run following commands in project directory:
 
 #### `python -m venv venv`  # Create a virtual environment
-`source venv/bin/activate`   Activate the environment (Linux/macOS)
-`venv\Scripts\activate`  # Activate the environment (Windows)
-`pip install -r requirements.txt`  # Install dependencies
+#### `source venv/bin/activate`   Activate the environment (Linux/macOS)
+#### `venv\Scripts\activate`  # Activate the environment (Windows)
+#### `pip install -r requirements.txt`  # Install dependencies
 
 ### Create a DeSo Account
 
@@ -17,9 +17,9 @@ Complete your profile using [update-profile](https://test.deso.org/update-profil
 
 ### To Set Up Secure Storage for Sensitive Data run following commands in Backend directory:
 
-`mkdir secure`  # Create a secure directory
-`cd secure`
-`echo > key_seed.db`  # Create an empty key_seed.db file
+#### `mkdir secure`  # Create a secure directory
+#### `cd secure`
+#### `echo > key_seed.db`  # Create an empty key_seed.db file
 
 ### Create a .env File in secure/
 
@@ -36,13 +36,13 @@ ENCRYPTION_KEY=""
 
 Use the cryptography library (already installed with requirements.txt) to generate an encryption key:
 
-`from cryptography.fernet import Fernet`
-`key = Fernet.generate_key()`
-`print(key.decode())`  # Copy and paste this into ENCRYPTION_KEY in .env
+#### `from cryptography.fernet import Fernet`
+#### `key = Fernet.generate_key()`
+#### `print(key.decode())`  # Copy and paste this into ENCRYPTION_KEY in .env
 
 ## 2️⃣ Frontend (React + TypeScript)
 
-# To Install Dependencies run following command in frontend directory:
+### To Install Dependencies run following command in frontend directory:
 
-`npm install`
+#### `npm install`
 
