@@ -25,12 +25,12 @@ Complete your profile using [update-profile](https://test.deso.org/update-profil
 
 Create a .env file inside the secure folder with the following content:
 
-DESO_SEED_PHRASE_OR_HEX=""  # Paste your DeSo seed phrase here\
-DESO_NODE_URL="https://test.deso.org"\
-TESTNET=True\
-DESO_PASSPHRASE=""\
-DESO_INDEX="0"\
-ENCRYPTION_KEY=""\
+#### DESO_SEED_PHRASE_OR_HEX=""  # Paste your DeSo seed phrase here
+#### DESO_NODE_URL="https://test.deso.org"
+#### TESTNET=True
+#### DESO_PASSPHRASE=""
+#### DESO_INDEX="0"
+#### ENCRYPTION_KEY=""
 
 ### Generate an Encryption Key
 
