@@ -2,7 +2,7 @@
 
 ## 1️⃣ Backend (Python + Flask)
 
-### <u>To Create Python Environment and Install Dependencies run following commands in project directory:</u>
+### <ins>To Create Python Environment and Install Dependencies run following commands in project directory:</ins>
 
 #### `python -m venv venv`  # Create a virtual environment
 #### `source venv/bin/activate`   Activate the environment (Linux/macOS)
